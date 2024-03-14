@@ -12,7 +12,7 @@ let package = Package(
         .library(name: "web3swift", targets: ["web3swift"])
     ],
     dependencies: [
-        .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.3.0")),
+        .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.2.0")),
         .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.5.1")),
         .package(name: "secp256k1", url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.7")
     ],
