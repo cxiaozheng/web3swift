@@ -4,12 +4,12 @@
 import PackageDescription
 
 let package = Package(
-    name: "Web3swiftest",
+    name: "Web3swift",
     platforms: [
         .macOS(.v10_15), .iOS(.v13)
     ],
     products: [
-        .library(name: "web3swiftest", targets: ["web3swiftest"])
+        .library(name: "web3swift", targets: ["web3swift"])
     ],
     dependencies: [
         .package(url: "https://github.com/attaswift/BigInt.git", .upToNextMinor(from: "5.2.0")),
@@ -22,7 +22,7 @@ let package = Package(
             dependencies: ["BigInt", "secp256k1", "CryptoSwift"]
         ),
         .target(
-            name: "web3swiftest",
+            name: "web3swift",
             dependencies: ["Web3Core", "BigInt", "secp256k1"],
             resources: [
                 .copy("./Browser/browser.js"),
@@ -32,8 +32,8 @@ let package = Package(
         ),
         .testTarget(
             name: "localTests",
-            dependencies: ["web3swiftest"],
-            path: "Tests/web3swiftestTests/localTests",
+            dependencies: ["web3swift"],
+            path: "Tests/web3swiftTests/localTests",
             resources: [
                 .copy("../../../TestToken/Helpers/SafeMath/SafeMath.sol"),
                 .copy("../../../TestToken/Helpers/TokenBasics/ERC20.sol"),
@@ -43,8 +43,8 @@ let package = Package(
         ),
         .testTarget(
             name: "remoteTests",
-            dependencies: ["web3swiftest"],
-            path: "Tests/web3swiftestTests/remoteTests",
+            dependencies: ["web3swift"],
+            path: "Tests/web3swiftTests/remoteTests",
             resources: [
                 .copy("../../../TestToken/Helpers/SafeMath/SafeMath.sol"),
                 .copy("../../../TestToken/Helpers/TokenBasics/ERC20.sol"),
